@@ -10,14 +10,20 @@ using System.Windows.Forms;
 
 namespace TopKlassSystem
 {
-    public partial class RepairOrder : Form
+    public partial class RepairWindow : Form
     {
-        public RepairOrder()
+        public RepairWindow()
         {
             InitializeComponent();
         }
 
-        private void Label7_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+        }
+
+        private void RepairWindow_Load(object sender, EventArgs e)
         {
 
         }

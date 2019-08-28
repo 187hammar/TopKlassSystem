@@ -26,7 +26,7 @@ namespace TopKlassSystem
         private void Welcome_Shown(object sender, EventArgs e)
         {
             tmr = new Timer();
-            tmr.Interval = 3000;
+            tmr.Interval = 6000;
             tmr.Start();
             tmr.Tick += tmr_Tick;
         }

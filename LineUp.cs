@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace TopKlassSystem
 {
-    public partial class Form1 : Form
+    public partial class LineUp : Form
     {
-        public Form1()
+        public LineUp()
         {
             InitializeComponent();
+        }
+
+        private void BtnHome_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
