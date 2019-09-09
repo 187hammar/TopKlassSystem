@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -46,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClientDataBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientDataBase.Designer.cs">
+      <DependentUpon>ClientDataBase.cs</DependentUpon>
+    </Compile>
     <Compile Include="HomeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +78,18 @@
     </Compile>
     <Compile Include="LineUp.Designer.cs">
       <DependentUpon>LineUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhoneDataBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhoneDataBase.Designer.cs">
+      <DependentUpon>PhoneDataBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RepairLineDataBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RepairLineDataBase.Designer.cs">
+      <DependentUpon>RepairLineDataBase.cs</DependentUpon>
     </Compile>
     <Compile Include="RepairWindow.cs">
       <SubType>Form</SubType>
@@ -90,17 +123,32 @@
     <Compile Include="stockOrder.Designer.cs">
       <DependentUpon>stockOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="UpdateStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateStock.Designer.cs">
+      <DependentUpon>UpdateStock.cs</DependentUpon>
+    </Compile>
     <Compile Include="Welcome.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Welcome.Designer.cs">
       <DependentUpon>Welcome.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ClientDataBase.resx">
+      <DependentUpon>ClientDataBase.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LineUp.resx">
       <DependentUpon>LineUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhoneDataBase.resx">
+      <DependentUpon>PhoneDataBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RepairLineDataBase.resx">
+      <DependentUpon>RepairLineDataBase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RepairWindow.resx">
       <DependentUpon>RepairWindow.cs</DependentUpon>
@@ -127,6 +175,9 @@
     <EmbeddedResource Include="stockOrder.resx">
       <DependentUpon>stockOrder.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UpdateStock.resx">
+      <DependentUpon>UpdateStock.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Welcome.resx">
       <DependentUpon>Welcome.cs</DependentUpon>
     </EmbeddedResource>
@@ -148,6 +199,62 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\zzzz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Cellphones.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Cellphones_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>Cellphones.mdf</DependentUpon>
+    </Content>
+    <Content Include="Clients.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Clients_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>Clients.mdf</DependentUpon>
+    </Content>
+    <Content Include="Model.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Model_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>Model.mdf</DependentUpon>
+    </Content>
+    <Content Include="Order.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Order_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>Order.mdf</DependentUpon>
+    </Content>
+    <Content Include="Repair.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Repair_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>Repair.mdf</DependentUpon>
+    </Content>
+    <Content Include="Suppliers.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Suppliers_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>Suppliers.mdf</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

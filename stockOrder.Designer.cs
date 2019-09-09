@@ -127,7 +127,7 @@
             // 
             this.txtOrderDate.Location = new System.Drawing.Point(491, 70);
             this.txtOrderDate.Name = "txtOrderDate";
-            this.txtOrderDate.Size = new System.Drawing.Size(218, 29);
+            this.txtOrderDate.Size = new System.Drawing.Size(278, 29);
             this.txtOrderDate.TabIndex = 7;
             // 
             // label6
@@ -160,7 +160,7 @@
             // 
             this.txtBrand.Location = new System.Drawing.Point(491, 24);
             this.txtBrand.Name = "txtBrand";
-            this.txtBrand.Size = new System.Drawing.Size(218, 29);
+            this.txtBrand.Size = new System.Drawing.Size(278, 29);
             this.txtBrand.TabIndex = 3;
             // 
             // label4

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace TopKlassSystem
 {
@@ -24,9 +25,13 @@ namespace TopKlassSystem
 
         private void StockOrder_Load(object sender, EventArgs e)
         {
-            //Order Date Should be Automatic upon form load
-            String date = DateTime.Today.ToString();
+            String dateDay = DateTime.Today.DayOfWeek.ToString();
+            String dateMonth = DateTime.Now.ToString("MMM");
+            String time = DateTime.Now.ToString("HH:mm"); ;
+            String dateYear = DateTime.Today.Year.ToString();
+            String date = dateDay + ", " + dateMonth + ", " + dateYear +", "+time;
             txtOrderDate.Text = date;
+
         }
 
         private void BtnSubmitOrder_Click(object sender, EventArgs e)

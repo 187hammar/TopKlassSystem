@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[CellphoneList]
+(
+	[Id] INT NOT NULL PRIMARY KEY,
+	[CellphonePrice] MONEY NOT NULL,
+	[RepaiID] INT NOT NULL FOREIGN KEY,
+	[ModelID] INT NOT NULL FOREIGN KEY,
+)

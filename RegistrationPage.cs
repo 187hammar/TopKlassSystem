@@ -67,5 +67,10 @@ namespace TopKlassSystem
         {
 
         }
+
+        private void RegistrationPage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

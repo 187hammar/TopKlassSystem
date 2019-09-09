@@ -38,10 +38,9 @@ namespace TopKlassSystem
         private void UpdateRepairsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //Same window as the add repair window, difference is listBox with Client name and Phone model previewed
-            RepairWindow child2 = new RepairWindow();
+            UpdateStock child2 = new UpdateStock();
             child2.MdiParent = this;
             child2.Show();
-            child2.cbxClients.Visible = true;
         }
 
         private void RepairLineupToolStripMenuItem_Click(object sender, EventArgs e)
@@ -70,6 +69,39 @@ namespace TopKlassSystem
             child5.lblTotaltxt.Visible = true;
             child5.lblRecievedDate.Visible = true;
             child5.txtRecievedDate.Visible = true;
+        }
+
+        private void PlaceRepairOrderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void StockDatabaseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UpdateStock child6 = new UpdateStock();
+            child6.MdiParent = this;
+            child6.Show();
+        }
+
+        private void PhoneDatabaseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PhoneDataBase child6 = new PhoneDataBase();
+            child6.MdiParent = this;
+            child6.Show();
+        }
+
+        private void ClientsDatabaseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ClientDataBase child6 = new ClientDataBase();
+            child6.MdiParent = this;
+            child6.Show();
+        }
+
+        private void RepairDatabaseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RepairLineDataBase child6 = new RepairLineDataBase();
+            child6.MdiParent = this;
+            child6.Show();
         }
     }
 }

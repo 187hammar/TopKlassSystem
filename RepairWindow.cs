@@ -25,7 +25,8 @@ namespace TopKlassSystem
 
         private void RepairWindow_Load(object sender, EventArgs e)
         {
-
+            lblClientName.Visible = false;
+            cbxClients.Visible = false;
         }
     }
 }
