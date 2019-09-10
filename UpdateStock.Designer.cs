@@ -84,6 +84,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "UpdateStock";
             this.Text = "UpdateStock";
+            this.Load += new System.EventHandler(this.UpdateStock_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -91,10 +92,9 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Button btnEdit;
+        public System.Windows.Forms.DataGridView dataGridView1;
     }
 }

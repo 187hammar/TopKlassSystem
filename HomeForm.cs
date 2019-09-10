@@ -7,11 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace TopKlassSystem
 {
     public partial class HomeForm : Form
     {
+        string conStrCellphone = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\X\Documents\C# 2k19\TopKlassSystem\Cellphones.mdf;Integrated Security = True";
+        string conStrClients = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\X\Documents\C# 2k19\TopKlassSystem\Clients.mdf;Integrated Security=True";
+        string conStrModel = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\X\Documents\C# 2k19\TopKlassSystem\Model.mdf;Integrated Security=True";
+        string conStrOrder = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\X\Documents\C# 2k19\TopKlassSystem\Order.mdf;Integrated Security=True";
+        string conStrRepair = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\X\Documents\C# 2k19\TopKlassSystem\Repair.mdf;Integrated Security=True";
+        string conStrSupplier = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\X\Documents\C# 2k19\TopKlassSystem\Suppliers.mdf;Integrated Security=True";
+        SqlConnection conn;
+        SqlCommand cmd;
+        SqlDataAdapter adp;
+        DataSet ds = new DataSet();
+
         public HomeForm()
         {
             InitializeComponent();
@@ -38,14 +50,14 @@ namespace TopKlassSystem
         private void UpdateRepairsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //Same window as the add repair window, difference is listBox with Client name and Phone model previewed
-            UpdateStock child2 = new UpdateStock();
+            RepairLineDataBase child2 = new RepairLineDataBase();
             child2.MdiParent = this;
             child2.Show();
         }
 
         private void RepairLineupToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            LineUp child3 = new LineUp();
+            RepairLineDataBase child3 = new RepairLineDataBase();
             child3.MdiParent = this;
             child3.Show();
 
@@ -63,12 +75,9 @@ namespace TopKlassSystem
 
         private void UpdateStockOrderToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            stockOrder child5 = new stockOrder();
+            UpdateStock child5 = new UpdateStock();
             child5.MdiParent = this;
             child5.Show();
-            child5.lblTotaltxt.Visible = true;
-            child5.lblRecievedDate.Visible = true;
-            child5.txtRecievedDate.Visible = true;
         }
 
         private void PlaceRepairOrderToolStripMenuItem_Click(object sender, EventArgs e)
@@ -80,6 +89,18 @@ namespace TopKlassSystem
         {
             UpdateStock child6 = new UpdateStock();
             child6.MdiParent = this;
+            conn = new SqlConnection(conStrOrder);
+            conn.Open();
+            string viewAll = "SELECT * FROM OrderTable";
+            cmd = new SqlCommand(viewAll, conn);
+            adp = new SqlDataAdapter();
+
+            adp.SelectCommand = cmd;
+            adp.Fill(ds, "Order");
+
+            child6.dataGridView1.DataSource = ds;
+            child6.dataGridView1.DataMember = "Order";
+            conn.Close();
             child6.Show();
         }
 
@@ -87,6 +108,18 @@ namespace TopKlassSystem
         {
             PhoneDataBase child6 = new PhoneDataBase();
             child6.MdiParent = this;
+            conn = new SqlConnection(conStrCellphone);
+            conn.Open();
+            string viewAll = "SELECT * FROM CellphoneTable";
+            cmd = new SqlCommand(viewAll, conn);
+            adp = new SqlDataAdapter();
+
+            adp.SelectCommand = cmd;
+            adp.Fill(ds, "Cellphones");
+
+            child6.dataGridView1.DataSource = ds;
+            child6.dataGridView1.DataMember = "Cellphones";
+            conn.Close();
             child6.Show();
         }
 
@@ -94,6 +127,18 @@ namespace TopKlassSystem
         {
             ClientDataBase child6 = new ClientDataBase();
             child6.MdiParent = this;
+            conn = new SqlConnection(conStrClients);
+            conn.Open();
+            string viewAll = "SELECT * FROM ClientInfo";
+            cmd = new SqlCommand(viewAll, conn);
+            adp = new SqlDataAdapter();
+
+            adp.SelectCommand = cmd;
+            adp.Fill(ds, "Clients");
+
+            child6.dataGridView1.DataSource = ds;
+            child6.dataGridView1.DataMember = "Clients";
+            conn.Close();
             child6.Show();
         }
 
@@ -101,7 +146,26 @@ namespace TopKlassSystem
         {
             RepairLineDataBase child6 = new RepairLineDataBase();
             child6.MdiParent = this;
+            conn = new SqlConnection(conStrRepair);
+            conn.Open();
+            string viewAll = "SELECT * FROM RepairTable";
+            cmd = new SqlCommand(viewAll, conn);
+            adp = new SqlDataAdapter();
+
+            adp.SelectCommand = cmd;
+            adp.Fill(ds, "Repair");
+
+            child6.dataGridView1.DataSource = ds;
+            child6.dataGridView1.DataMember = "Repair";
+            conn.Close();
             child6.Show();
+        }
+
+        private void UpdateClientsInfoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ClientDataBase child7 = new ClientDataBase();
+            child7.MdiParent = this;
+            child7.Show();
         }
     }
 }

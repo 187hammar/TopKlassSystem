@@ -92,8 +92,8 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Button btnEdit;
+        public System.Windows.Forms.DataGridView dataGridView1;
     }
 }

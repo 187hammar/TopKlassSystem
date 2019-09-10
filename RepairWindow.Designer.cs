@@ -29,18 +29,20 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtPhoneNum = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtLastName = new System.Windows.Forms.TextBox();
+            this.txtFirstName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtRepairDesc = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtSerialNum = new System.Windows.Forms.TextBox();
+            this.txtCellphoneModel = new System.Windows.Forms.TextBox();
+            this.txtCellphoneBrand = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -48,34 +50,36 @@
             this.btnSubmit = new System.Windows.Forms.Button();
             this.cbxClients = new System.Windows.Forms.ComboBox();
             this.lblClientName = new System.Windows.Forms.Label();
+            this.lblRepairCost = new System.Windows.Forms.Label();
+            this.txtTotalCost = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.txtEmail);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.txtPhoneNum);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtLastName);
+            this.groupBox1.Controls.Add(this.txtFirstName);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 118);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(636, 137);
+            this.groupBox1.Size = new System.Drawing.Size(672, 137);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Client Information";
             // 
-            // textBox4
+            // txtEmail
             // 
-            this.textBox4.Location = new System.Drawing.Point(417, 74);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(155, 29);
-            this.textBox4.TabIndex = 7;
+            this.txtEmail.Location = new System.Drawing.Point(417, 74);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(155, 29);
+            this.txtEmail.TabIndex = 7;
             // 
             // label4
             // 
@@ -86,12 +90,12 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "E-mail: ";
             // 
-            // textBox3
+            // txtPhoneNum
             // 
-            this.textBox3.Location = new System.Drawing.Point(152, 74);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(122, 29);
-            this.textBox3.TabIndex = 5;
+            this.txtPhoneNum.Location = new System.Drawing.Point(152, 74);
+            this.txtPhoneNum.Name = "txtPhoneNum";
+            this.txtPhoneNum.Size = new System.Drawing.Size(122, 29);
+            this.txtPhoneNum.TabIndex = 5;
             // 
             // label3
             // 
@@ -102,19 +106,19 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Phone Number: ";
             // 
-            // textBox2
+            // txtLastName
             // 
-            this.textBox2.Location = new System.Drawing.Point(417, 26);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(155, 29);
-            this.textBox2.TabIndex = 3;
+            this.txtLastName.Location = new System.Drawing.Point(417, 26);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(155, 29);
+            this.txtLastName.TabIndex = 3;
             // 
-            // textBox1
+            // txtFirstName
             // 
-            this.textBox1.Location = new System.Drawing.Point(112, 26);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(162, 29);
-            this.textBox1.TabIndex = 2;
+            this.txtFirstName.Location = new System.Drawing.Point(112, 26);
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Size = new System.Drawing.Size(162, 29);
+            this.txtFirstName.TabIndex = 2;
             // 
             // label2
             // 
@@ -136,40 +140,59 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox7);
-            this.groupBox2.Controls.Add(this.textBox6);
-            this.groupBox2.Controls.Add(this.textBox5);
+            this.groupBox2.Controls.Add(this.txtRepairDesc);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.txtSerialNum);
+            this.groupBox2.Controls.Add(this.txtCellphoneModel);
+            this.groupBox2.Controls.Add(this.txtCellphoneBrand);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(12, 261);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(636, 145);
+            this.groupBox2.Size = new System.Drawing.Size(672, 225);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cellphone Information";
             // 
-            // textBox7
+            // txtRepairDesc
             // 
-            this.textBox7.Location = new System.Drawing.Point(233, 94);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(220, 29);
-            this.textBox7.TabIndex = 5;
+            this.txtRepairDesc.Location = new System.Drawing.Point(5, 148);
+            this.txtRepairDesc.Multiline = true;
+            this.txtRepairDesc.Name = "txtRepairDesc";
+            this.txtRepairDesc.Size = new System.Drawing.Size(659, 69);
+            this.txtRepairDesc.TabIndex = 7;
             // 
-            // textBox6
+            // label9
             // 
-            this.textBox6.Location = new System.Drawing.Point(233, 59);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(220, 29);
-            this.textBox6.TabIndex = 4;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(7, 121);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(169, 24);
+            this.label9.TabIndex = 6;
+            this.label9.Text = "Repair Description:";
             // 
-            // textBox5
+            // txtSerialNum
             // 
-            this.textBox5.Location = new System.Drawing.Point(233, 22);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(220, 29);
-            this.textBox5.TabIndex = 3;
+            this.txtSerialNum.Location = new System.Drawing.Point(233, 94);
+            this.txtSerialNum.Name = "txtSerialNum";
+            this.txtSerialNum.Size = new System.Drawing.Size(220, 29);
+            this.txtSerialNum.TabIndex = 5;
+            // 
+            // txtCellphoneModel
+            // 
+            this.txtCellphoneModel.Location = new System.Drawing.Point(233, 59);
+            this.txtCellphoneModel.Name = "txtCellphoneModel";
+            this.txtCellphoneModel.Size = new System.Drawing.Size(220, 29);
+            this.txtCellphoneModel.TabIndex = 4;
+            // 
+            // txtCellphoneBrand
+            // 
+            this.txtCellphoneBrand.Location = new System.Drawing.Point(233, 22);
+            this.txtCellphoneBrand.Name = "txtCellphoneBrand";
+            this.txtCellphoneBrand.Size = new System.Drawing.Size(220, 29);
+            this.txtCellphoneBrand.TabIndex = 3;
             // 
             // label7
             // 
@@ -212,7 +235,7 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(609, 455);
+            this.btnSubmit.Location = new System.Drawing.Point(609, 492);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
             this.btnSubmit.TabIndex = 4;
@@ -238,11 +261,30 @@
             this.lblClientName.TabIndex = 6;
             this.lblClientName.Text = "CLIENT NAME:";
             // 
+            // lblRepairCost
+            // 
+            this.lblRepairCost.AutoSize = true;
+            this.lblRepairCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRepairCost.Location = new System.Drawing.Point(8, 495);
+            this.lblRepairCost.Name = "lblRepairCost";
+            this.lblRepairCost.Size = new System.Drawing.Size(81, 20);
+            this.lblRepairCost.TabIndex = 7;
+            this.lblRepairCost.Text = "Total Cost";
+            // 
+            // txtTotalCost
+            // 
+            this.txtTotalCost.Location = new System.Drawing.Point(95, 497);
+            this.txtTotalCost.Name = "txtTotalCost";
+            this.txtTotalCost.Size = new System.Drawing.Size(100, 20);
+            this.txtTotalCost.TabIndex = 8;
+            // 
             // RepairWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(696, 490);
+            this.ClientSize = new System.Drawing.Size(696, 522);
+            this.Controls.Add(this.txtTotalCost);
+            this.Controls.Add(this.lblRepairCost);
             this.Controls.Add(this.lblClientName);
             this.Controls.Add(this.cbxClients);
             this.Controls.Add(this.btnSubmit);
@@ -262,20 +304,11 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -283,5 +316,17 @@
         private System.Windows.Forms.Button btnSubmit;
         public System.Windows.Forms.ComboBox cbxClients;
         public System.Windows.Forms.Label lblClientName;
+        public System.Windows.Forms.GroupBox groupBox1;
+        public System.Windows.Forms.TextBox txtEmail;
+        public System.Windows.Forms.TextBox txtPhoneNum;
+        public System.Windows.Forms.TextBox txtLastName;
+        public System.Windows.Forms.TextBox txtFirstName;
+        public System.Windows.Forms.TextBox txtSerialNum;
+        public System.Windows.Forms.TextBox txtCellphoneModel;
+        public System.Windows.Forms.TextBox txtCellphoneBrand;
+        private System.Windows.Forms.Label label9;
+        public System.Windows.Forms.TextBox txtRepairDesc;
+        private System.Windows.Forms.Label lblRepairCost;
+        public System.Windows.Forms.TextBox txtTotalCost;
     }
 }

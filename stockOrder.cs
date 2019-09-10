@@ -32,6 +32,9 @@ namespace TopKlassSystem
             String date = dateDay + ", " + dateMonth + ", " + dateYear +", "+time;
             txtOrderDate.Text = date;
 
+            lblOrderNum.Visible = false;
+            txtOrderNum.Visible = false;
+
         }
 
         private void BtnSubmitOrder_Click(object sender, EventArgs e)

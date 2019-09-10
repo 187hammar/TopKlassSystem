@@ -41,9 +41,9 @@
             this.label1.Font = new System.Drawing.Font("Algerian", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(13, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 26);
+            this.label1.Size = new System.Drawing.Size(188, 26);
             this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            this.label1.Text = "Repair line-up";
             // 
             // dataGridView1
             // 
@@ -71,6 +71,7 @@
             this.btnEdit.TabIndex = 3;
             this.btnEdit.Text = "EDIT.";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
             // 
             // RepairLineDataBase
             // 
@@ -83,6 +84,7 @@
             this.Controls.Add(this.label1);
             this.Name = "RepairLineDataBase";
             this.Text = "RepairLineDataBase";
+            this.Load += new System.EventHandler(this.RepairLineDataBase_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -92,8 +94,8 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Button btnEdit;
+        public System.Windows.Forms.Button btnHome;
+        public System.Windows.Forms.DataGridView dataGridView1;
     }
 }

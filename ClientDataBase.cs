@@ -23,5 +23,19 @@ namespace TopKlassSystem
             this.Hide();
             hf.Show();
         }
+
+        private void BtnEdit_Click(object sender, EventArgs e)
+        {
+            RepairWindow rw = new RepairWindow();
+            this.Hide();
+            rw.txtCellphoneBrand.Enabled = false;
+            rw.txtCellphoneModel.Enabled = false;
+            rw.txtRepairDesc.Enabled = false;
+            rw.txtTotalCost.Enabled = false;
+            rw.txtSerialNum.Enabled = false;
+            rw.lblClientName.Visible = true;
+            rw.cbxClients.Visible = true;
+            rw.Show();
+        }
     }
 }

@@ -46,6 +46,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.cmbSupplier = new System.Windows.Forms.ComboBox();
             this.btnSubmitOrder = new System.Windows.Forms.Button();
+            this.lblOrderNum = new System.Windows.Forms.Label();
+            this.txtOrderNum = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,7 +66,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(13, 90);
+            this.label2.Location = new System.Drawing.Point(12, 106);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(253, 24);
             this.label2.TabIndex = 1;
@@ -81,7 +83,7 @@
             "Phone Microphones",
             "Charging systems",
             "Headset pods"});
-            this.cmbParts.Location = new System.Drawing.Point(260, 95);
+            this.cmbParts.Location = new System.Drawing.Point(271, 111);
             this.cmbParts.Name = "cmbParts";
             this.cmbParts.Size = new System.Drawing.Size(193, 21);
             this.cmbParts.TabIndex = 2;
@@ -100,9 +102,9 @@
             this.groupBox1.Controls.Add(this.txtSpareName);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(13, 127);
+            this.groupBox1.Location = new System.Drawing.Point(16, 146);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(775, 158);
+            this.groupBox1.Size = new System.Drawing.Size(775, 191);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Order Description";
@@ -202,7 +204,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(13, 288);
+            this.label8.Location = new System.Drawing.Point(9, 340);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(90, 24);
             this.label8.TabIndex = 5;
@@ -211,7 +213,7 @@
             // cmbSupplier
             // 
             this.cmbSupplier.FormattingEnabled = true;
-            this.cmbSupplier.Location = new System.Drawing.Point(99, 293);
+            this.cmbSupplier.Location = new System.Drawing.Point(105, 345);
             this.cmbSupplier.Name = "cmbSupplier";
             this.cmbSupplier.Size = new System.Drawing.Size(195, 21);
             this.cmbSupplier.TabIndex = 6;
@@ -227,11 +229,30 @@
             this.btnSubmitOrder.UseVisualStyleBackColor = true;
             this.btnSubmitOrder.Click += new System.EventHandler(this.BtnSubmitOrder_Click);
             // 
+            // lblOrderNum
+            // 
+            this.lblOrderNum.AutoSize = true;
+            this.lblOrderNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOrderNum.Location = new System.Drawing.Point(12, 68);
+            this.lblOrderNum.Name = "lblOrderNum";
+            this.lblOrderNum.Size = new System.Drawing.Size(143, 24);
+            this.lblOrderNum.TabIndex = 8;
+            this.lblOrderNum.Text = "Order Number: ";
+            // 
+            // txtOrderNum
+            // 
+            this.txtOrderNum.Location = new System.Drawing.Point(161, 73);
+            this.txtOrderNum.Name = "txtOrderNum";
+            this.txtOrderNum.Size = new System.Drawing.Size(172, 20);
+            this.txtOrderNum.TabIndex = 9;
+            // 
             // stockOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtOrderNum);
+            this.Controls.Add(this.lblOrderNum);
             this.Controls.Add(this.btnSubmitOrder);
             this.Controls.Add(this.cmbSupplier);
             this.Controls.Add(this.label8);
@@ -270,5 +291,7 @@
         public System.Windows.Forms.Label lblRecievedDate;
         private System.Windows.Forms.Button btnSubmitOrder;
         public System.Windows.Forms.TextBox txtOrderDate;
+        public System.Windows.Forms.TextBox txtOrderNum;
+        public System.Windows.Forms.Label lblOrderNum;
     }
 }

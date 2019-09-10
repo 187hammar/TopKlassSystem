@@ -111,14 +111,14 @@
             // addOrderToolStripMenuItem
             // 
             this.addOrderToolStripMenuItem.Name = "addOrderToolStripMenuItem";
-            this.addOrderToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.addOrderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.addOrderToolStripMenuItem.Text = "Add Order";
             this.addOrderToolStripMenuItem.Click += new System.EventHandler(this.AddOrderToolStripMenuItem_Click);
             // 
             // updateStockOrderToolStripMenuItem
             // 
             this.updateStockOrderToolStripMenuItem.Name = "updateStockOrderToolStripMenuItem";
-            this.updateStockOrderToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.updateStockOrderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.updateStockOrderToolStripMenuItem.Text = "Edit Stock Orders";
             this.updateStockOrderToolStripMenuItem.Click += new System.EventHandler(this.UpdateStockOrderToolStripMenuItem_Click);
             // 
@@ -133,8 +133,9 @@
             // updateClientsInfoToolStripMenuItem
             // 
             this.updateClientsInfoToolStripMenuItem.Name = "updateClientsInfoToolStripMenuItem";
-            this.updateClientsInfoToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.updateClientsInfoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.updateClientsInfoToolStripMenuItem.Text = "Update Clients Info\'";
+            this.updateClientsInfoToolStripMenuItem.Click += new System.EventHandler(this.UpdateClientsInfoToolStripMenuItem_Click);
             // 
             // viewDatabaseToolStripMenuItem
             // 
@@ -151,35 +152,35 @@
             // phoneDatabaseToolStripMenuItem
             // 
             this.phoneDatabaseToolStripMenuItem.Name = "phoneDatabaseToolStripMenuItem";
-            this.phoneDatabaseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.phoneDatabaseToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.phoneDatabaseToolStripMenuItem.Text = "Phone Database";
             this.phoneDatabaseToolStripMenuItem.Click += new System.EventHandler(this.PhoneDatabaseToolStripMenuItem_Click);
             // 
             // clientsDatabaseToolStripMenuItem
             // 
             this.clientsDatabaseToolStripMenuItem.Name = "clientsDatabaseToolStripMenuItem";
-            this.clientsDatabaseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.clientsDatabaseToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.clientsDatabaseToolStripMenuItem.Text = "Clients Database";
             this.clientsDatabaseToolStripMenuItem.Click += new System.EventHandler(this.ClientsDatabaseToolStripMenuItem_Click);
             // 
             // stockDatabaseToolStripMenuItem
             // 
             this.stockDatabaseToolStripMenuItem.Name = "stockDatabaseToolStripMenuItem";
-            this.stockDatabaseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.stockDatabaseToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.stockDatabaseToolStripMenuItem.Text = "Stock Database";
             this.stockDatabaseToolStripMenuItem.Click += new System.EventHandler(this.StockDatabaseToolStripMenuItem_Click);
             // 
             // repairDatabaseToolStripMenuItem
             // 
             this.repairDatabaseToolStripMenuItem.Name = "repairDatabaseToolStripMenuItem";
-            this.repairDatabaseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.repairDatabaseToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.repairDatabaseToolStripMenuItem.Text = "In-Line Database";
             this.repairDatabaseToolStripMenuItem.Click += new System.EventHandler(this.RepairDatabaseToolStripMenuItem_Click);
             // 
             // summaryToolStripMenuItem
             // 
             this.summaryToolStripMenuItem.Name = "summaryToolStripMenuItem";
-            this.summaryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.summaryToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.summaryToolStripMenuItem.Text = "Summary";
             // 
             // HomeForm
