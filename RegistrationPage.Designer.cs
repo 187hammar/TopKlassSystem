@@ -39,6 +39,8 @@
             this.txtPWord = new System.Windows.Forms.TextBox();
             this.txtConPWord = new System.Windows.Forms.TextBox();
             this.btnNext = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -71,7 +73,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(138, 87);
+            this.label3.Location = new System.Drawing.Point(138, 115);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(97, 24);
             this.label3.TabIndex = 2;
@@ -81,7 +83,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(72, 114);
+            this.label4.Location = new System.Drawing.Point(68, 148);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(167, 24);
             this.label4.TabIndex = 3;
@@ -107,7 +109,7 @@
             // txtPWord
             // 
             this.txtPWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPWord.Location = new System.Drawing.Point(241, 85);
+            this.txtPWord.Location = new System.Drawing.Point(241, 115);
             this.txtPWord.Name = "txtPWord";
             this.txtPWord.Size = new System.Drawing.Size(100, 26);
             this.txtPWord.TabIndex = 6;
@@ -116,7 +118,7 @@
             // txtConPWord
             // 
             this.txtConPWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConPWord.Location = new System.Drawing.Point(241, 114);
+            this.txtConPWord.Location = new System.Drawing.Point(241, 148);
             this.txtConPWord.Name = "txtConPWord";
             this.txtConPWord.Size = new System.Drawing.Size(100, 26);
             this.txtConPWord.TabIndex = 7;
@@ -134,11 +136,31 @@
             this.btnNext.UseVisualStyleBackColor = true;
             this.btnNext.Click += new System.EventHandler(this.BtnNext_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(167, 85);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(68, 24);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "E-mail:";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(241, 85);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(100, 26);
+            this.txtEmail.TabIndex = 10;
+            // 
             // RegistrationPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(532, 419);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.txtConPWord);
             this.Controls.Add(this.txtPWord);
@@ -163,10 +185,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtFName;
-        private System.Windows.Forms.TextBox txtLName;
         private System.Windows.Forms.TextBox txtPWord;
-        private System.Windows.Forms.TextBox txtConPWord;
         private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.Label label5;
+        public System.Windows.Forms.TextBox txtEmail;
+        public System.Windows.Forms.TextBox txtFName;
+        public System.Windows.Forms.TextBox txtLName;
+        public System.Windows.Forms.TextBox txtConPWord;
     }
 }

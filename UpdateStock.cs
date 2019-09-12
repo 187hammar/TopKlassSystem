@@ -33,6 +33,8 @@ namespace TopKlassSystem
             rw.Show();
             rw.lblOrderNum.Visible = true;
             rw.txtOrderNum.Visible = true;
+            rw.btnReSubmit.Visible = true;
+            rw.btnSubmitOrder.Visible = true;
         }
 
         private void UpdateStock_Load(object sender, EventArgs e)

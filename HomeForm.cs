@@ -71,6 +71,8 @@ namespace TopKlassSystem
             child4.lblTotaltxt.Visible = false;
             child4.lblRecievedDate.Visible = false;
             child4.txtRecievedDate.Visible = false;
+            child4.btnSubmitOrder.Visible = true;
+            child4.btnReSubmit.Visible = false;
         }
 
         private void UpdateStockOrderToolStripMenuItem_Click(object sender, EventArgs e)
@@ -166,6 +168,11 @@ namespace TopKlassSystem
             ClientDataBase child7 = new ClientDataBase();
             child7.MdiParent = this;
             child7.Show();
+        }
+
+        private void SummaryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

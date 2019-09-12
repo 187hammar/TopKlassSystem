@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Net;
+using System.Net.Mail;
 
 namespace TopKlassSystem
 {
@@ -82,6 +84,42 @@ namespace TopKlassSystem
         {
             lblClientName.Visible = false;
             cbxClients.Visible = false;
+        }
+
+        private void BtnComplete_Click(object sender, EventArgs e)
+        {
+            RegistrationPage rp = new RegistrationPage();
+            string to, from, pass, mail, nameOfClient;
+            nameOfClient = "Ted";
+            to = (txtEmail.Text).ToString();
+            from = (rp.txtEmail.Text).ToString();
+            mail = "Dear "+nameOfClient+"\n\n" +
+                "We are pleased to inform you that the process of restoring and repairing you cellphone is complete. Thank you for your patience.\n" +
+                "Please come to collect you phone at the store as soon as possible. We hope the services were above standard and that they were so satisfactory that you would recomend us to your family and friends.\n" +
+                "\nYours Faithfully" +
+                "\n"+rp.txtLName.Text+" "+rp.txtFName.Text+"" +
+                "\n" +
+                "\nThis system was deeloped by Top Klazz System development team.";
+            pass = (rp.txtConPWord.Text).ToString();
+            MailMessage message = new MailMessage();
+            message.To.Add(to);
+            message.From = new MailAddress(from);
+            message.Body = mail;
+            message.Subject = "Cellphone repair progress";
+            SmtpClient smtp = new SmtpClient("smtp.gmail.com");
+            smtp.EnableSsl = true;
+            smtp.Port = 587;
+            smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+            smtp.Credentials = new NetworkCredential(from, pass);
+            try
+            {
+                smtp.Send(message);
+                MessageBox.Show("Email delivered to Client");
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show(er.Message);
+            }
         }
     }
 }

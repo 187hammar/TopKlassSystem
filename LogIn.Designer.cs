@@ -30,7 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtNames = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtLogInPassword = new System.Windows.Forms.TextBox();
             this.btnNext = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -39,11 +39,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 15);
+            this.label1.Location = new System.Drawing.Point(60, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 13);
+            this.label1.Size = new System.Drawing.Size(78, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Name and Surname:";
+            this.label1.Text = "E-mail address:";
             // 
             // label2
             // 
@@ -54,12 +54,12 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Password:";
             // 
-            // txtNames
+            // txtEmail
             // 
-            this.txtNames.Location = new System.Drawing.Point(144, 12);
-            this.txtNames.Name = "txtNames";
-            this.txtNames.Size = new System.Drawing.Size(100, 20);
-            this.txtNames.TabIndex = 2;
+            this.txtEmail.Location = new System.Drawing.Point(144, 12);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(100, 20);
+            this.txtEmail.TabIndex = 2;
             // 
             // txtLogInPassword
             // 
@@ -98,7 +98,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.txtLogInPassword);
-            this.Controls.Add(this.txtNames);
+            this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "LogIn";
@@ -113,7 +113,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtNames;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtLogInPassword;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Label label3;

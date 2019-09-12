@@ -49,6 +49,7 @@ namespace TopKlassSystem
             String LName = txtLName.Text;
             String PWord1 = txtPWord.Text;
             String PWord2 = txtConPWord.Text;
+            String Email = txtEmail.Text;
             if (PWord1==PWord2)
             {
                 String password = PWord1;
