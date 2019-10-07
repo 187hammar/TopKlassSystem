@@ -50,18 +50,35 @@ namespace TopKlassSystem
             String PWord1 = txtPWord.Text;
             String PWord2 = txtConPWord.Text;
             String Email = txtEmail.Text;
+
             if (PWord1==PWord2)
             {
                 String password = PWord1;
                 hashedPassword = Hash(password);
             }
+            if (txtEmail.Text != string.Empty && txtLName.Text != string.Empty && txtFName.Text != string.Empty && txtPWord.Text != string.Empty && txtConPWord.Text != string.Empty)
+            {
+                SignInPage home = new SignInPage();
+                this.Hide();
+                home.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                if (txtEmail.Text == string.Empty)
+                {
+                    errorProvider1.SetError(txtEmail, "Please enter appropreate E-mail address");
+                }
+                if (txtFName.Text == string.Empty)
+                {
+                    errorProvider2.SetError(txtFName, "Please enter First Name");
+                }
+                if (txtLName.Text == string.Empty)
+                {
+                    errorProvider3.SetError(txtLName, "Please enter Last Name");
+                }
+            }
 
-            MessageBox.Show(hashedPassword);
-
-            SignInPage home = new SignInPage();
-            this.Hide();
-            home.ShowDialog();
-            this.Show();
         }
 
         private void TextBox4_TextChanged(object sender, EventArgs e)

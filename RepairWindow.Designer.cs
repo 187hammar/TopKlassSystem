@@ -52,7 +52,6 @@
             this.lblClientName = new System.Windows.Forms.Label();
             this.lblRepairCost = new System.Windows.Forms.Label();
             this.txtTotalCost = new System.Windows.Forms.TextBox();
-            this.btnComplete = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -233,6 +232,7 @@
             this.label8.Size = new System.Drawing.Size(423, 59);
             this.label8.TabIndex = 2;
             this.label8.Text = "Top Klazz Systems";
+            this.label8.Click += new System.EventHandler(this.Label8_Click);
             // 
             // btnSubmit
             // 
@@ -251,6 +251,8 @@
             this.cbxClients.Name = "cbxClients";
             this.cbxClients.Size = new System.Drawing.Size(207, 21);
             this.cbxClients.TabIndex = 5;
+            this.cbxClients.SelectedIndexChanged += new System.EventHandler(this.CbxClients_SelectedIndexChanged);
+            this.cbxClients.SelectedValueChanged += new System.EventHandler(this.CbxClients_SelectedValueChanged);
             // 
             // lblClientName
             // 
@@ -279,22 +281,11 @@
             this.txtTotalCost.Size = new System.Drawing.Size(100, 20);
             this.txtTotalCost.TabIndex = 8;
             // 
-            // btnComplete
-            // 
-            this.btnComplete.Location = new System.Drawing.Point(245, 495);
-            this.btnComplete.Name = "btnComplete";
-            this.btnComplete.Size = new System.Drawing.Size(111, 23);
-            this.btnComplete.TabIndex = 9;
-            this.btnComplete.Text = "Repair Complete";
-            this.btnComplete.UseVisualStyleBackColor = true;
-            this.btnComplete.Click += new System.EventHandler(this.BtnComplete_Click);
-            // 
             // RepairWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(696, 522);
-            this.Controls.Add(this.btnComplete);
             this.Controls.Add(this.txtTotalCost);
             this.Controls.Add(this.lblRepairCost);
             this.Controls.Add(this.lblClientName);
@@ -340,6 +331,5 @@
         public System.Windows.Forms.TextBox txtRepairDesc;
         private System.Windows.Forms.Label lblRepairCost;
         public System.Windows.Forms.TextBox txtTotalCost;
-        private System.Windows.Forms.Button btnComplete;
     }
 }

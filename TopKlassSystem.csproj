@@ -48,6 +48,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EASendMail">
+      <HintPath>..\..\..\..\..\Program Files (x86)\EASendMail\Lib\net40\EASendMail.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -79,12 +82,6 @@
     <Compile Include="NewSupplier.Designer.cs">
       <DependentUpon>NewSupplier.cs</DependentUpon>
     </Compile>
-    <Compile Include="PhoneDataBase.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PhoneDataBase.Designer.cs">
-      <DependentUpon>PhoneDataBase.cs</DependentUpon>
-    </Compile>
     <Compile Include="RepairLineDataBase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +93,12 @@
     </Compile>
     <Compile Include="RepairWindow.Designer.cs">
       <DependentUpon>RepairWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report.Designer.cs">
+      <DependentUpon>Report.cs</DependentUpon>
     </Compile>
     <Compile Include="SignIn.cs">
       <SubType>Form</SubType>
@@ -144,14 +147,14 @@
     <EmbeddedResource Include="NewSupplier.resx">
       <DependentUpon>NewSupplier.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PhoneDataBase.resx">
-      <DependentUpon>PhoneDataBase.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="RepairLineDataBase.resx">
       <DependentUpon>RepairLineDataBase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RepairWindow.resx">
       <DependentUpon>RepairWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report.resx">
+      <DependentUpon>Report.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SignIn.resx">
       <DependentUpon>SignIn.cs</DependentUpon>
@@ -236,6 +239,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Repair.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\81_ene12_thor.jpg" />
+    <None Include="Resources\maxresdefault.jpg" />
     <Content Include="Suppliers.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

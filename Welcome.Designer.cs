@@ -37,7 +37,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::TopKlassSystem.Properties.Resources.Ei3e991J;
+            this.pictureBox1.Image = global::TopKlassSystem.Properties.Resources._81_ene12_thor;
             this.pictureBox1.Location = new System.Drawing.Point(0, -1);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(801, 453);

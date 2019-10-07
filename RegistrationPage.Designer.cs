@@ -41,6 +41,12 @@
             this.btnNext = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider3 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -94,7 +100,7 @@
             this.txtFName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFName.Location = new System.Drawing.Point(241, 28);
             this.txtFName.Name = "txtFName";
-            this.txtFName.Size = new System.Drawing.Size(100, 26);
+            this.txtFName.Size = new System.Drawing.Size(133, 26);
             this.txtFName.TabIndex = 4;
             this.txtFName.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             // 
@@ -103,7 +109,7 @@
             this.txtLName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLName.Location = new System.Drawing.Point(241, 57);
             this.txtLName.Name = "txtLName";
-            this.txtLName.Size = new System.Drawing.Size(100, 26);
+            this.txtLName.Size = new System.Drawing.Size(133, 26);
             this.txtLName.TabIndex = 5;
             // 
             // txtPWord
@@ -111,7 +117,7 @@
             this.txtPWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPWord.Location = new System.Drawing.Point(241, 115);
             this.txtPWord.Name = "txtPWord";
-            this.txtPWord.Size = new System.Drawing.Size(100, 26);
+            this.txtPWord.Size = new System.Drawing.Size(133, 26);
             this.txtPWord.TabIndex = 6;
             this.txtPWord.UseSystemPasswordChar = true;
             // 
@@ -120,7 +126,7 @@
             this.txtConPWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConPWord.Location = new System.Drawing.Point(241, 148);
             this.txtConPWord.Name = "txtConPWord";
-            this.txtConPWord.Size = new System.Drawing.Size(100, 26);
+            this.txtConPWord.Size = new System.Drawing.Size(133, 26);
             this.txtConPWord.TabIndex = 7;
             this.txtConPWord.UseSystemPasswordChar = true;
             this.txtConPWord.TextChanged += new System.EventHandler(this.TextBox4_TextChanged);
@@ -128,7 +134,7 @@
             // btnNext
             // 
             this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNext.Location = new System.Drawing.Point(404, 139);
+            this.btnNext.Location = new System.Drawing.Point(417, 372);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(103, 35);
             this.btnNext.TabIndex = 8;
@@ -151,8 +157,20 @@
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(241, 85);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(100, 26);
+            this.txtEmail.Size = new System.Drawing.Size(133, 26);
             this.txtEmail.TabIndex = 10;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // errorProvider2
+            // 
+            this.errorProvider2.ContainerControl = this;
+            // 
+            // errorProvider3
+            // 
+            this.errorProvider3.ContainerControl = this;
             // 
             // RegistrationPage
             // 
@@ -173,6 +191,9 @@
             this.Name = "RegistrationPage";
             this.Text = "REGISTRATION PAGE";
             this.Load += new System.EventHandler(this.RegistrationPage_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -192,5 +213,8 @@
         public System.Windows.Forms.TextBox txtFName;
         public System.Windows.Forms.TextBox txtLName;
         public System.Windows.Forms.TextBox txtConPWord;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider errorProvider2;
+        private System.Windows.Forms.ErrorProvider errorProvider3;
     }
 }

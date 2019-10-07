@@ -16,6 +16,92 @@ namespace TopKlassSystem
 {
     public partial class stockOrder : Form
     {
+        double LCDprice = 140, battery = 189, screen = 445, phoneSpeaker = 470, phoneMicrophone = 289, chargingSystem = 445, headsetPods = 58;
+        string conStrOrder = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\X\Documents\C# 2k19\TopKlassSystem\Order.mdf;Integrated Security=True";
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            if (txtSpareName.Text == null)
+            {
+                txtSpareName.Text = txtSpareName.Text + button3.Text;
+            }
+            else
+            {
+                txtSpareName.Text = txtSpareName.Text +"\n "+ button3.Text;
+            }
+        }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            if (txtSpareName.Text == null)
+            {
+                txtSpareName.Text = txtSpareName.Text + button4.Text;
+            }
+            else
+            {
+                txtSpareName.Text = txtSpareName.Text + "\n " + button4.Text;
+            }
+        }
+
+        private void Button5_Click(object sender, EventArgs e)
+        {
+            if (txtSpareName.Text == null)
+            {
+                txtSpareName.Text = txtSpareName.Text + button5.Text;
+            }
+            else
+            {
+                txtSpareName.Text = txtSpareName.Text + "\n " + button5.Text;
+            }
+        }
+
+        private void Button6_Click(object sender, EventArgs e)
+        {
+            if (txtSpareName.Text == null)
+            {
+                txtSpareName.Text = txtSpareName.Text + button6.Text;
+            }
+            else
+            {
+                txtSpareName.Text = txtSpareName.Text + "\n " + button6.Text;
+            }
+        }
+
+        private void Button7_Click(object sender, EventArgs e)
+        {
+            if (txtSpareName.Text == null)
+            {
+                txtSpareName.Text = txtSpareName.Text + button7.Text;
+            }
+            else
+            {
+                txtSpareName.Text = txtSpareName.Text + "\n " + button7.Text;
+            }
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            if (txtSpareName.Text == null)
+            {
+                txtSpareName.Text = txtSpareName.Text + button2.Text;
+            }
+            else
+            {
+                txtSpareName.Text = txtSpareName.Text + "\n " + button2.Text;
+            }
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            if (txtSpareName.Text == null)
+            {
+                txtSpareName.Text = txtSpareName.Text + button1.Text;
+            }
+            else
+            {
+                txtSpareName.Text = txtSpareName.Text + "\n " + button1.Text;
+            }
+        }
+
         string conStrSup = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\X\Documents\C# 2k19\TopKlassSystem\Suppliers.mdf;Integrated Security=True";
         public stockOrder()
         {
@@ -24,22 +110,31 @@ namespace TopKlassSystem
 
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            txtSpareName.Text = cmbParts.SelectedItem.ToString();
         }
-
+        public static string orderDate;
+        public static string orderRecievedDate;
         private void StockOrder_Load(object sender, EventArgs e)
         {
-            String dateDay = DateTime.Today.DayOfWeek.ToString();
-            String dateMonth = DateTime.Now.ToString("MMM");
-            String time = DateTime.Now.ToString("HH:mm"); ;
-            String dateYear = DateTime.Today.Year.ToString();
+            string dateDay = DateTime.Today.DayOfWeek.ToString();
+            string dateMonth = DateTime.Now.ToString("MMM");
+            string time = DateTime.Now.ToString("HH:mm"); ;
+            string dateYear = DateTime.Today.Year.ToString();
             string day = DateTime.Today.Day.ToString();
-            String date = dateDay + ", " +day+ ", " + dateMonth + ", " + dateYear +", "+time;
-            txtOrderDate.Text = date;
+            orderDate = dateDay + ", " +day+ ", " + dateMonth + ", " + dateYear +", "+time;
+
+            string dateDayR = DateTime.Today.AddDays(3).DayOfWeek.ToString();
+            string dateMonthR = DateTime.Now.AddDays(3).ToString("MMM");
+            string timeR = DateTime.Now.AddDays(3).ToString("HH:mm"); ;
+            string dateYearR = DateTime.Today.AddDays(3).Year.ToString();
+            string dayR = DateTime.Today.Day.ToString();
+            orderRecievedDate = dateDayR + ", " + dayR + ", " + dateMonthR + ", " + dateYearR + ", " + timeR;
+            txtOrderDate.Text = orderDate;
+            txtOrderDate.Enabled = false;
+            txtRecievedDate.Text = orderRecievedDate;
+            txtRecievedDate.Enabled = false;
 
             lblOrderNum.Visible = false;
             txtOrderNum.Visible = false;
-
 
             SqlConnection conn= new SqlConnection(conStrSup);
             conn.Open();
@@ -55,11 +150,59 @@ namespace TopKlassSystem
             cmbSupplier.ValueMember = "SupplierName";
             cmbSupplier.DataSource = ds.Tables["SupplierTable"];
             conn.Close();
+
+
         }
 
         private void BtnSubmitOrder_Click(object sender, EventArgs e)
         {
-            this.Close();
+            double totalCost = 0;
+            if (txtSpareName.Text.Contains(button1.Text))
+            {
+                totalCost += LCDprice;
+            }
+            if (txtSpareName.Text.Contains(button2.Text))
+            {
+                totalCost += battery;
+            }
+            if (txtSpareName.Text.Contains(button3.Text))
+            {
+                totalCost += screen;
+            }
+            if (txtSpareName.Text.Contains(button4.Text))
+            {
+                totalCost += phoneMicrophone;
+            }
+            if (txtSpareName.Text.Contains(button5.Text))
+            {
+                totalCost += phoneSpeaker;
+            }
+            if (txtSpareName.Text.Contains(button6.Text))
+            {
+                totalCost += chargingSystem;
+            }
+            if (txtSpareName.Text.Contains(button7.Text))
+            {
+                totalCost += headsetPods;
+            }
+
+            string phoneBrand = txtBrand.Text, model = txtModel.Text, date = txtOrderDate.Text, spareName = txtSpareName.Text;
+            string orderDesc = phoneBrand + ", " + model + ", " + spareName;
+            this.InitializeComponent();
+            SqlConnection conn = new SqlConnection(conStrOrder);
+            conn.Open();
+            string addOrder = "INSERT INTO OrderTable VALUES(@OrderDescription, @OrderCost, @OrderDate, @OrderDateRecieved)";
+            SqlCommand cmd = new SqlCommand(addOrder, conn);
+            SqlDataAdapter adp = new SqlDataAdapter();
+            cmd.Parameters.AddWithValue("@OrderDescription", orderDesc);
+            cmd.Parameters.AddWithValue("@OrderCost", totalCost);
+            cmd.Parameters.AddWithValue("@OrderDate", orderDate);
+            cmd.Parameters.AddWithValue("@OrderDateRecieved", orderRecievedDate);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+            MessageBox.Show("ORDER SUCCESSFULLY SENT TO SUPPLIER.\n\n Order currently being proccessed. \n PARTS WILL BE DILIVERED WITH IN A MAXIMUN OF THREE DAYS");
+
+
         }
 
         private void Label6_Click(object sender, EventArgs e)
@@ -69,62 +212,52 @@ namespace TopKlassSystem
 
         private void BtnReSubmit_Click(object sender, EventArgs e)
         {
-            RegistrationPage rp = new RegistrationPage();
-            NewSupplier ns = new NewSupplier();
-            string to, from, pass, mail, nameOfClient;
-            nameOfClient = "Ted";
-            if (cmbSupplier.SelectedIndex == 0)
+            double totalCost = 0;
+            if (txtSpareName.Text.Contains(button1.Text))
             {
-                to = "info@gamma.co.za";
+                totalCost += LCDprice;
             }
-            else if (cmbSupplier.SelectedIndex == 1)
+            if (txtSpareName.Text.Contains(button2.Text))
             {
-                to = "info@mobilefun.co.za";
+                totalCost += battery;
             }
-            else if (cmbSupplier.SelectedIndex == 2)
+            if (txtSpareName.Text.Contains(button3.Text))
             {
-                to = "info@bluetec.co.za";
+                totalCost += screen;
             }
-            else if (cmbSupplier.SelectedIndex == 3)
+            if (txtSpareName.Text.Contains(button4.Text))
             {
-                to = "info@tvcmall.co.za";
+                totalCost += phoneMicrophone;
             }
-            else if (cmbSupplier.SelectedIndex == 1)
+            if (txtSpareName.Text.Contains(button5.Text))
             {
-                to = "info@fruugo.co.za";
+                totalCost += phoneSpeaker;
             }
-            else
+            if (txtSpareName.Text.Contains(button6.Text))
             {
-                to = ns.txtSupName.Text;
+                totalCost += chargingSystem;
             }
-            from = (rp.txtEmail.Text).ToString();
-            mail = "Dear " + nameOfClient + "\n\n" +
-                "We are pleased to inform you that the process of restoring and repairing you cellphone is complete. Thank you for your patience.\n" +
-                "Please come to collect you phone at the store as soon as possible. We hope the services were above standard and that they were so satisfactory that you would recomend us to your family and friends.\n" +
-                "\nYours Faithfully" +
-                "\n" + rp.txtLName.Text + " " + rp.txtFName.Text + "" +
-                "\n" +
-                "\nThis system was deeloped by Top Klazz System development team.";
-            pass = (rp.txtConPWord.Text).ToString();
-            MailMessage message = new MailMessage();
-            message.To.Add(to);
-            message.From = new MailAddress(from);
-            message.Body = mail;
-            message.Subject = "Cellphone repair progress";
-            SmtpClient smtp = new SmtpClient("smtp.gmail.com");
-            smtp.EnableSsl = true;
-            smtp.Port = 587;
-            smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-            smtp.Credentials = new NetworkCredential(from, pass);
-            try
+            if (txtSpareName.Text.Contains(button7.Text))
             {
-                smtp.Send(message);
-                MessageBox.Show("Email delivered to Client");
+                totalCost += headsetPods;
             }
-            catch (Exception er)
-            {
-                MessageBox.Show(er.Message);
-            }
+
+            string phoneBrand = txtBrand.Text, model = txtModel.Text, date = txtOrderDate.Text, spareName = txtSpareName.Text;
+            string orderDesc = phoneBrand + ", " + model + ", " + spareName;
+            this.InitializeComponent();
+            SqlConnection conn = new SqlConnection(conStrOrder);
+            conn.Open();
+            string addOrder = "INSERT INTO OrderTable VALUES(@OrderDescription, @OrderCost, @OrderDate, @OrderDateRecieved)";
+            SqlCommand cmd = new SqlCommand(addOrder, conn);
+            SqlDataAdapter adp = new SqlDataAdapter();
+            cmd.Parameters.AddWithValue("@OrderDescription", orderDesc);
+            cmd.Parameters.AddWithValue("@OrderCost", totalCost);
+            cmd.Parameters.AddWithValue("@OrderDate", orderDate);
+            cmd.Parameters.AddWithValue("@OrderDateRecieved", orderRecievedDate);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+            MessageBox.Show("ORDER SUCCESSFULLY SENT TO SUPPLIER.\n\n Order currently being proccessed. \n PARTS WILL BE DILIVERED WITH IN A MAXIMUN OF THREE DAYS");
+
         }
 
         private void BtnSupplier_Click(object sender, EventArgs e)

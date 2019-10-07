@@ -32,7 +32,6 @@
             this.placeRepairOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addRepairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateRepairsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.repairLineupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.placeInventoryOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,7 +39,6 @@
             this.contactClientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateClientsInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.phoneDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientsDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stockDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.repairDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,8 +64,7 @@
             // 
             this.placeRepairOrderToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addRepairToolStripMenuItem,
-            this.updateRepairsToolStripMenuItem,
-            this.repairLineupToolStripMenuItem});
+            this.updateRepairsToolStripMenuItem});
             this.placeRepairOrderToolStripMenuItem.Name = "placeRepairOrderToolStripMenuItem";
             this.placeRepairOrderToolStripMenuItem.Size = new System.Drawing.Size(116, 20);
             this.placeRepairOrderToolStripMenuItem.Text = "Place Repair Order";
@@ -76,23 +73,16 @@
             // addRepairToolStripMenuItem
             // 
             this.addRepairToolStripMenuItem.Name = "addRepairToolStripMenuItem";
-            this.addRepairToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.addRepairToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.addRepairToolStripMenuItem.Text = "Add Repair";
             this.addRepairToolStripMenuItem.Click += new System.EventHandler(this.AddRepairToolStripMenuItem_Click);
             // 
             // updateRepairsToolStripMenuItem
             // 
             this.updateRepairsToolStripMenuItem.Name = "updateRepairsToolStripMenuItem";
-            this.updateRepairsToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
-            this.updateRepairsToolStripMenuItem.Text = "Update Repairs";
+            this.updateRepairsToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.updateRepairsToolStripMenuItem.Text = "Repairs";
             this.updateRepairsToolStripMenuItem.Click += new System.EventHandler(this.UpdateRepairsToolStripMenuItem_Click);
-            // 
-            // repairLineupToolStripMenuItem
-            // 
-            this.repairLineupToolStripMenuItem.Name = "repairLineupToolStripMenuItem";
-            this.repairLineupToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
-            this.repairLineupToolStripMenuItem.Text = "Repair line-up";
-            this.repairLineupToolStripMenuItem.Click += new System.EventHandler(this.RepairLineupToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -140,7 +130,6 @@
             // viewDatabaseToolStripMenuItem
             // 
             this.viewDatabaseToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.phoneDatabaseToolStripMenuItem,
             this.clientsDatabaseToolStripMenuItem,
             this.stockDatabaseToolStripMenuItem,
             this.repairDatabaseToolStripMenuItem,
@@ -149,46 +138,39 @@
             this.viewDatabaseToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
             this.viewDatabaseToolStripMenuItem.Text = "View Database";
             // 
-            // phoneDatabaseToolStripMenuItem
-            // 
-            this.phoneDatabaseToolStripMenuItem.Name = "phoneDatabaseToolStripMenuItem";
-            this.phoneDatabaseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.phoneDatabaseToolStripMenuItem.Text = "Phone Database";
-            this.phoneDatabaseToolStripMenuItem.Click += new System.EventHandler(this.PhoneDatabaseToolStripMenuItem_Click);
-            // 
             // clientsDatabaseToolStripMenuItem
             // 
             this.clientsDatabaseToolStripMenuItem.Name = "clientsDatabaseToolStripMenuItem";
-            this.clientsDatabaseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.clientsDatabaseToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.clientsDatabaseToolStripMenuItem.Text = "Clients Database";
             this.clientsDatabaseToolStripMenuItem.Click += new System.EventHandler(this.ClientsDatabaseToolStripMenuItem_Click);
             // 
             // stockDatabaseToolStripMenuItem
             // 
             this.stockDatabaseToolStripMenuItem.Name = "stockDatabaseToolStripMenuItem";
-            this.stockDatabaseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.stockDatabaseToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.stockDatabaseToolStripMenuItem.Text = "Stock Database";
             this.stockDatabaseToolStripMenuItem.Click += new System.EventHandler(this.StockDatabaseToolStripMenuItem_Click);
             // 
             // repairDatabaseToolStripMenuItem
             // 
             this.repairDatabaseToolStripMenuItem.Name = "repairDatabaseToolStripMenuItem";
-            this.repairDatabaseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.repairDatabaseToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.repairDatabaseToolStripMenuItem.Text = "In-Line Database";
             this.repairDatabaseToolStripMenuItem.Click += new System.EventHandler(this.RepairDatabaseToolStripMenuItem_Click);
             // 
             // summaryToolStripMenuItem
             // 
             this.summaryToolStripMenuItem.Name = "summaryToolStripMenuItem";
-            this.summaryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.summaryToolStripMenuItem.Text = "Summary";
+            this.summaryToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.summaryToolStripMenuItem.Text = "Request Report";
             this.summaryToolStripMenuItem.Click += new System.EventHandler(this.SummaryToolStripMenuItem_Click);
             // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::TopKlassSystem.Properties.Resources.zzzz;
+            this.BackgroundImage = global::TopKlassSystem.Properties.Resources.maxresdefault;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(793, 631);
             this.Controls.Add(this.menuStrip1);
@@ -199,6 +181,7 @@
             this.Name = "HomeForm";
             this.Text = "HomeForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.HomeForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -216,11 +199,9 @@
         private System.Windows.Forms.ToolStripMenuItem viewDatabaseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addRepairToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateRepairsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem repairLineupToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addOrderToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateStockOrderToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateClientsInfoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem phoneDatabaseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clientsDatabaseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stockDatabaseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem repairDatabaseToolStripMenuItem;

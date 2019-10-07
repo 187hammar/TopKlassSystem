@@ -30,7 +30,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.cmbParts = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtRecievedDate = new System.Windows.Forms.TextBox();
             this.lblRecievedDate = new System.Windows.Forms.Label();
@@ -52,6 +51,15 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btnDeleteSupplier = new System.Windows.Forms.Button();
             this.txtDelete = new System.Windows.Forms.TextBox();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.lblCost = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,28 +78,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 169);
+            this.label2.Location = new System.Drawing.Point(12, 151);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(253, 24);
             this.label2.TabIndex = 1;
             this.label2.Text = "Frequently Requested Parts: ";
-            // 
-            // cmbParts
-            // 
-            this.cmbParts.FormattingEnabled = true;
-            this.cmbParts.Items.AddRange(new object[] {
-            "LCD",
-            "Batteries",
-            "Screens",
-            "Phone Speakers",
-            "Phone Microphones",
-            "Charging systems",
-            "Headset pods"});
-            this.cmbParts.Location = new System.Drawing.Point(271, 169);
-            this.cmbParts.Name = "cmbParts";
-            this.cmbParts.Size = new System.Drawing.Size(193, 21);
-            this.cmbParts.TabIndex = 2;
-            this.cmbParts.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
             // 
             // groupBox1
             // 
@@ -182,6 +173,7 @@
             // txtSpareName
             // 
             this.txtSpareName.Location = new System.Drawing.Point(129, 24);
+            this.txtSpareName.Multiline = true;
             this.txtSpareName.Name = "txtSpareName";
             this.txtSpareName.Size = new System.Drawing.Size(219, 29);
             this.txtSpareName.TabIndex = 1;
@@ -244,7 +236,7 @@
             // btnReSubmit
             // 
             this.btnReSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReSubmit.Location = new System.Drawing.Point(659, 420);
+            this.btnReSubmit.Location = new System.Drawing.Point(520, 419);
             this.btnReSubmit.Name = "btnReSubmit";
             this.btnReSubmit.Size = new System.Drawing.Size(129, 23);
             this.btnReSubmit.TabIndex = 10;
@@ -291,11 +283,110 @@
             this.txtDelete.Size = new System.Drawing.Size(100, 20);
             this.txtDelete.TabIndex = 14;
             // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Location = new System.Drawing.Point(13, 419);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(169, 29);
+            this.lblTotal.TabIndex = 15;
+            this.lblTotal.Text = "TOTAL COST";
+            // 
+            // lblCost
+            // 
+            this.lblCost.AutoSize = true;
+            this.lblCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCost.Location = new System.Drawing.Point(173, 419);
+            this.lblCost.Name = "lblCost";
+            this.lblCost.Size = new System.Drawing.Size(27, 29);
+            this.lblCost.TabIndex = 16;
+            this.lblCost.Text = ": ";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(258, 154);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "LCD";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(258, 183);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 18;
+            this.button2.Text = "Batteries";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(339, 154);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(93, 23);
+            this.button3.TabIndex = 19;
+            this.button3.Text = "Phone Screens";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(326, 212);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(118, 23);
+            this.button4.TabIndex = 20;
+            this.button4.Text = "Phone Microphone";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.Button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(339, 183);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(93, 23);
+            this.button5.TabIndex = 21;
+            this.button5.Text = "Phone Speaker";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.Button5_Click);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(438, 183);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(88, 23);
+            this.button6.TabIndex = 22;
+            this.button6.Text = "Charging block";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.Button6_Click);
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(438, 151);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(88, 23);
+            this.button7.TabIndex = 23;
+            this.button7.Text = "Headset pods";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.Button7_Click);
+            // 
             // stockOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.lblCost);
+            this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.txtDelete);
             this.Controls.Add(this.btnDeleteSupplier);
             this.Controls.Add(this.label7);
@@ -307,7 +398,6 @@
             this.Controls.Add(this.cmbSupplier);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.cmbParts);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "stockOrder";
@@ -324,15 +414,11 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cmbParts;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtModel;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtBrand;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtSpareName;
         private System.Windows.Forms.Label label8;
         public System.Windows.Forms.TextBox txtRecievedDate;
         public System.Windows.Forms.Label lblRecievedDate;
@@ -346,5 +432,17 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnDeleteSupplier;
         private System.Windows.Forms.TextBox txtDelete;
+        public System.Windows.Forms.Label lblTotal;
+        public System.Windows.Forms.Label lblCost;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        public System.Windows.Forms.TextBox txtModel;
+        public System.Windows.Forms.TextBox txtBrand;
+        public System.Windows.Forms.TextBox txtSpareName;
     }
 }

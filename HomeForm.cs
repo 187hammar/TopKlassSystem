@@ -7,18 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Globalization;
+using System.Net;
+using System.Net.Mail;
+
 using System.Data.SqlClient;
+
 
 namespace TopKlassSystem
 {
     public partial class HomeForm : Form
     {
-        string conStrCellphone = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\X\Documents\C# 2k19\TopKlassSystem\Cellphones.mdf;Integrated Security = True";
         string conStrClients = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\X\Documents\C# 2k19\TopKlassSystem\Clients.mdf;Integrated Security=True";
-        string conStrModel = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\X\Documents\C# 2k19\TopKlassSystem\Model.mdf;Integrated Security=True";
         string conStrOrder = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\X\Documents\C# 2k19\TopKlassSystem\Order.mdf;Integrated Security=True";
         string conStrRepair = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\X\Documents\C# 2k19\TopKlassSystem\Repair.mdf;Integrated Security=True";
-        string conStrSupplier = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\X\Documents\C# 2k19\TopKlassSystem\Suppliers.mdf;Integrated Security=True";
         SqlConnection conn;
         SqlCommand cmd;
         SqlDataAdapter adp;
@@ -45,6 +48,7 @@ namespace TopKlassSystem
             child1.MdiParent = this;
             child1.Show();
             child1.cbxClients.Visible = false;
+            child1.lblClientName.Visible = false;
         }
 
         private void UpdateRepairsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -55,24 +59,17 @@ namespace TopKlassSystem
             child2.Show();
         }
 
-        private void RepairLineupToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            RepairLineDataBase child3 = new RepairLineDataBase();
-            child3.MdiParent = this;
-            child3.Show();
-
-        }
+        
 
         private void AddOrderToolStripMenuItem_Click(object sender, EventArgs e)
         {
             stockOrder child4 = new stockOrder();
             child4.MdiParent = this;
             child4.Show();
-            child4.lblTotaltxt.Visible = false;
             child4.lblRecievedDate.Visible = false;
             child4.txtRecievedDate.Visible = false;
             child4.btnSubmitOrder.Visible = true;
-            child4.btnReSubmit.Visible = false;
+            child4.btnReSubmit.Visible = true;
         }
 
         private void UpdateStockOrderToolStripMenuItem_Click(object sender, EventArgs e)
@@ -106,40 +103,21 @@ namespace TopKlassSystem
             child6.Show();
         }
 
-        private void PhoneDatabaseToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            PhoneDataBase child6 = new PhoneDataBase();
-            child6.MdiParent = this;
-            conn = new SqlConnection(conStrCellphone);
-            conn.Open();
-            string viewAll = "SELECT * FROM CellphoneTable";
-            cmd = new SqlCommand(viewAll, conn);
-            adp = new SqlDataAdapter();
-
-            adp.SelectCommand = cmd;
-            adp.Fill(ds, "Cellphones");
-
-            child6.dataGridView1.DataSource = ds;
-            child6.dataGridView1.DataMember = "Cellphones";
-            conn.Close();
-            child6.Show();
-        }
-
         private void ClientsDatabaseToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ClientDataBase child6 = new ClientDataBase();
             child6.MdiParent = this;
             conn = new SqlConnection(conStrClients);
             conn.Open();
-            string viewAll = "SELECT * FROM ClientInfo";
+            string viewAll = "SELECT * FROM ClientTable";
             cmd = new SqlCommand(viewAll, conn);
             adp = new SqlDataAdapter();
 
             adp.SelectCommand = cmd;
-            adp.Fill(ds, "Clients");
+            adp.Fill(ds, "ClientTable");
 
             child6.dataGridView1.DataSource = ds;
-            child6.dataGridView1.DataMember = "Clients";
+            child6.dataGridView1.DataMember = "ClientTable";
             conn.Close();
             child6.Show();
         }
@@ -171,6 +149,50 @@ namespace TopKlassSystem
         }
 
         private void SummaryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Report child8 = new Report();
+            SqlConnection conn1 = new SqlConnection(conStrClients);
+            SqlConnection conn2 = new SqlConnection(conStrOrder);
+            SqlConnection conn3 = new SqlConnection(conStrRepair);
+            conn1.Open();
+            conn2.Open();
+            conn3.Open();
+            string viewClients = "SELECT * FROM ClientTable";
+            string viewOrder = "SELECT * FROM OrderTable";
+            string viewRepair = "SELECT * FROM RepairTable";
+            SqlCommand cmd1 = new SqlCommand(viewClients, conn1);
+            SqlCommand cmd2 = new SqlCommand(viewOrder, conn2);
+            SqlCommand cmd3 = new SqlCommand(viewRepair, conn3);
+            SqlDataAdapter adp = new SqlDataAdapter();
+            DataSet ds = new DataSet();
+            adp.SelectCommand = cmd1;
+            adp.Fill(ds, "ClientTable");
+            SqlDataAdapter adp2 = new SqlDataAdapter();
+            DataSet ds2 = new DataSet();
+            adp.SelectCommand = cmd2;
+            adp.Fill(ds2, "ClientTable");
+            SqlDataAdapter adp3 = new SqlDataAdapter();
+            DataSet ds3 = new DataSet();
+            adp.SelectCommand = cmd3;
+            adp.Fill(ds3, "ClientTable");
+
+            child8.dataGridView1.DataSource = ds;
+            child8.dataGridView1.DataMember = "ClientTable";
+            child8.dataGridView2.DataSource = ds2;
+            child8.dataGridView2.DataMember = "ClientTable";
+            child8.dataGridView3.DataSource = ds3;
+            child8.dataGridView3.DataMember = "ClientTable";
+            conn1.Close();
+            conn2.Close();
+            conn3.Close();
+            child8.MdiParent = this;
+            child8.Show();
+            
+        }
+
+        
+
+        private void HomeForm_Load(object sender, EventArgs e)
         {
 
         }
